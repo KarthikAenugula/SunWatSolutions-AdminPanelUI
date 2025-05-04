@@ -1,0 +1,545 @@
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>Ready Bootstrap Dashboard</title>
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+	<link rel="stylesheet" href="assets/css/ready.css">
+	<link rel="stylesheet" href="assets/css/demo.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+
+
+</head>
+<body>
+
+    <div  class="wrapper">
+
+        <div class="main-header">
+			<div class="logo-header">
+				<a href="index.html" class="logo">
+					Admin Dashboard
+				</a>
+				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<button class="topbar-toggler more"><i class="la la-ellipsis-v"></i></button>
+			</div>
+			<nav class="navbar navbar-header navbar-expand-lg">
+				<div class="container-fluid">
+					
+					<form class="navbar-left navbar-form nav-search mr-md-3" action="">
+						<div class="input-group">
+							<input type="text" placeholder="Search ..." class="form-control">
+							<div class="input-group-append">
+								<span class="input-group-text">
+									<i class="la la-search search-icon"></i>
+								</span>
+							</div>
+						</div>
+					</form>
+					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+						<li class="nav-item dropdown hidden-caret">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<i class="la la-envelope"></i>
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="#">Action</a>
+								<a class="dropdown-item" href="#">Another action</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#">Something else here</a>
+							</div>
+						</li>
+						<li class="nav-item dropdown hidden-caret">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<i class="la la-bell"></i>
+								<span class="notification">3</span>
+							</a>
+							<ul class="dropdown-menu notif-box" aria-labelledby="navbarDropdown">
+								<li>
+									<div class="dropdown-title">You have 4 new notification</div>
+								</li>
+								<li>
+									<div class="notif-center">
+										<a href="#">
+											<div class="notif-icon notif-primary"> <i class="la la-user-plus"></i> </div>
+											<div class="notif-content">
+												<span class="block">
+													New user registered
+												</span>
+												<span class="time">5 minutes ago</span> 
+											</div>
+										</a>
+										<a href="#">
+											<div class="notif-icon notif-success"> <i class="la la-comment"></i> </div>
+											<div class="notif-content">
+												<span class="block">
+													Rahmad commented on Admin
+												</span>
+												<span class="time">12 minutes ago</span> 
+											</div>
+										</a>
+										<a href="#">
+											<div class="notif-img"> 
+												<img src="assets/img/profile2.jpg" alt="Img Profile">
+											</div>
+											<div class="notif-content">
+												<span class="block">
+													Reza send messages to you
+												</span>
+												<span class="time">12 minutes ago</span> 
+											</div>
+										</a>
+										<a href="#">
+											<div class="notif-icon notif-danger"> <i class="la la-heart"></i> </div>
+											<div class="notif-content">
+												<span class="block">
+													Farrah liked Admin
+												</span>
+												<span class="time">17 minutes ago</span> 
+											</div>
+										</a>
+									</div>
+								</li>
+								<li>
+									<a class="see-all" href="javascript:void(0);"> <strong>See all notifications</strong> <i class="la la-angle-right"></i> </a>
+								</li>
+							</ul>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false"> <img src="assets/img/profile.jpg" alt="user-img" width="36" class="img-circle"><span >Hizrian</span></span> </a>
+							<ul class="dropdown-menu dropdown-user">
+								<li>
+									<div class="user-box">
+										<div class="u-img"><img src="assets/img/profile.jpg" alt="user"></div>
+										<div class="u-text">
+											<h4>Hizrian</h4>
+											<p class="text-muted">hello@themekita.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
+										</div>
+									</li>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" href="#"><i class="ti-user"></i> My Profile</a>
+									<a class="dropdown-item" href="#"></i> My Balance</a>
+									<a class="dropdown-item" href="#"><i class="ti-email"></i> Inbox</a>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" href="#"><i class="ti-settings"></i> Account Setting</a>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" href="#"><i class="fa fa-power-off"></i> Logout</a>
+								</ul>
+								<!-- /.dropdown-user -->
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+
+			<div class="sidebar">
+				<div class="scrollbar-inner sidebar-wrapper">
+					<div class="user">
+						<div class="photo"><img src="assets/img/sunwat_logo.png"></div>
+						<div class="info">
+							<a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+								<span>SunWatSolutions<span class="user-level">Administrator</span><span class="caret"></span></span>
+							</a>
+							<div class="clearfix"></div>
+							<div class="collapse in" id="collapseExample" aria-expanded="true" style="">
+								<ul class="nav">
+									<li><a href="#profile"><span class="link-collapse">My Profile</span></a></li>
+									<li><a href="#edit"><span class="link-collapse">Edit Profile</span></a></li>
+									<li><a href="#settings"><span class="link-collapse">Settings</span></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+	
+					<ul class="nav">
+						<!-- Dashboard -->
+						<li class="nav-item">
+							<a href="index.html" class="nav-link">
+								<i class="la la-dashboard"></i>
+								<p>Dashboard</p>
+								<span class="badge badge-count">5</span>
+							</a>
+						</li>
+	
+						<!-- Employees Menu -->
+						<li class="nav-item">
+							<a href="#" class="nav-link" onclick="toggleSubmenu(event, 'employeeMenu')">
+								<i class="la la-users"></i>
+								<p>Employees</p>
+								<span class="badge badge-success">New</span>
+								<i class="fas fa-angle-right float-right mt-1"></i>
+							</a>
+							<ul class="nav nav-treeview" id="employeeMenu" style="display: none;">
+								<li class="nav-item">
+									<a href="./employee.html" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Employee Info</p>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href="./add-employee.html" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Add Employee</p>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href="./Task-assign.html" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Task Assign</p>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href="./Track-location.html" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Employee Reports</p>
+									</a>
+								</li>
+							</ul>
+						</li>
+	
+						<!-- Clients Menu -->
+						<li class="nav-item">
+							<a href="#" class="nav-link" onclick="toggleSubmenu(event, 'clientMenu')">
+								<i class="la la-users"></i>
+								<p>Clients</p>
+								<span class="badge badge-success">New</span>
+								<i class="fas fa-angle-right float-right mt-1"></i>
+							</a>
+							<ul class="nav nav-treeview" id="clientMenu" style="display: none;">
+								<li class="nav-item">
+									<a href="./clients.html" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Add Client</p>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href="./client-info.html" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Client Info</p>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href="./ServiceDate.html" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Add Service Date</p>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href="./payment.html" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Payment Page</p>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href="./paymenthistory.html" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Payment history</p>
+									</a>
+								</li>
+							</ul>
+						</li>
+	
+						<!-- Setup Menu -->
+						<li class="nav-item">
+							<a href="#" class="nav-link" onclick="toggleSubmenu(event, 'setupMenu')">
+								<i class="la la-cogs"></i>
+								<p>Setup</p>
+								<span class="badge badge-success">New</span>
+								<i class="fas fa-angle-right float-right mt-1"></i>
+							</a>
+							<ul class="nav nav-treeview" id="setupMenu" style="display: none;">
+								<li class="nav-item">
+									<a href="./checklist.html" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Checklist</p>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href="./purifier-info.html" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Purifier Info</p>
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+	
+				</div>
+			</div>
+
+  
+       <!-- ADD EMPLOYEE PAGE -->
+	   <div id="addEmployee" class="main-panel">
+		<div class="content">
+			<h2 class="mb-4">Add Employee</h2>
+		
+			<!-- Bootstrap Alert (Hidden Initially) -->
+			<div id="alertMessage" class="alert alert-success alert-dismissible fade" role="alert" style="display: none;">
+				<strong>Success!</strong> New employee added successfully.
+				<button type="button" class="btn-close" onclick="hideAlert()" aria-label="Close"></button>
+			</div>
+		
+			<div class="employee-form-container" style="display: flex; gap: 20px; flex-wrap: wrap;">
+				<!-- Employee Form -->
+				<form id="addEmployeeForm" class="p-4 shadow bg-white rounded" style="flex: 1; min-width: 300px;">
+					<div class="row mb-3">
+						<!-- First Name -->
+						<div class="col-md-6">
+							<label class="form-label">First Name</label>
+							<input type="text" class="form-control" id="firstName" name="firstName" placeholder="John" required />
+						</div>
+						<!-- Last Name -->
+						<div class="col-md-6">
+							<label class="form-label">Last Name</label>
+							<input type="text" class="form-control" id="lastName" name="lastName" placeholder="Doe" required />
+						</div>
+					</div>
+		
+					<!-- Full Name (Auto-generated) -->
+					<div class="mb-3">
+						<label class="form-label">Full Name</label>
+						<input type="text" class="form-control" id="fullName" name="fullName" placeholder="Full Name" readonly />
+					</div>
+		
+					<div class="row mb-3">
+						<!-- Email -->
+						<div class="col-md-6">
+							<label class="form-label">Email</label>
+							<input type="email" class="form-control" name="email" placeholder="john@example.com" required />
+						</div>
+		
+						<!-- Phone Number -->
+						<div class="col-md-6">
+							<label class="form-label">Phone Number</label>
+							<input type="tel" class="form-control" name="phone" placeholder="+91 98765 43210" pattern="[0-9]{10}" required />
+						</div>
+					</div>
+		
+					<!-- Address -->
+					<div class="mb-3">
+						<label class="form-label">Address</label>
+						<textarea class="form-control" name="address" rows="3" placeholder="Enter full address" required></textarea>
+					</div>
+		
+					<!-- Role -->
+					<div class="mb-3">
+						<label class="form-label">Role</label>
+						<select class="form-select" name="role" required style="padding: 10px;margin:10px; font-size: 16px; border-radius: 8px;">
+							<option value="Employee">Employee</option>
+							<option value="Manager">Manager</option>
+							<option value="Team Lead">Team Lead</option>
+							<option value="Supervisor">Supervisor</option>
+						</select>
+					</div>
+		
+					<button class="btn btn-primary w-100" id="submit" type="submit" style="padding: 12px; font-size: 14px;">Add Employee</button>
+				</form>
+			</div>
+		</div>
+		
+		
+	</div>
+
+
+
+
+</div>
+
+<script src="assets/js/core/jquery.3.2.1.min.js"></script>
+<script src="assets/js/core/popper.min.js"></script>
+<script src="assets/js/core/bootstrap.min.js"></script>
+<script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+<script src="assets/js/ready.min.js"></script>
+
+<!-- ... existing HTML ... -->
+
+<script type="text/javascript">
+
+
+   $(document).ready(function() {
+
+	alert(1);
+	// Employee Counter for Auto-Incrementing Emp ID
+	document.getElementById("firstName").addEventListener("input", updateFullName);
+	document.getElementById("lastName").addEventListener("input", updateFullName);
+
+	function updateFullName() {
+		const firstName = document.getElementById("firstName").value;
+		const lastName = document.getElementById("lastName").value;
+		document.getElementById("fullName").value = firstName + " " + lastName;
+	}
+
+	function hideAlert() {
+		document.getElementById("alertMessage").style.display = "none";
+	}
+
+	function closeAllDropdowns() {
+	   const allMenus = document.querySelectorAll('.nav-treeview');
+	   allMenus.forEach(menu => {
+		   menu.style.display = 'none';
+		   menu.parentElement.classList.remove('active');
+		   const arrow = menu.parentElement.querySelector('.fa-angle-down, .fa-angle-right');
+		   if (arrow) {
+			   arrow.classList.remove('fa-angle-down');
+			   arrow.classList.add('fa-angle-right');
+		   }
+		   localStorage.setItem(`${menu.id}Open`, 'false');
+	   });
+   }
+
+	function toggleSubmenu(event, menuId) {
+	   event.preventDefault();
+	   
+	   const submenu = document.getElementById(menuId);
+	   const parentItem = submenu.parentElement;
+	   const isOpen = submenu.style.display === 'block';
+	   const allMenus = document.querySelectorAll('.nav-treeview');
+	   
+	   // Close all other menus before toggling the current one
+	   allMenus.forEach(menu => {
+		   if (menu.id !== menuId) {
+			   menu.style.display = 'none';
+			   menu.parentElement.classList.remove('active');
+			   const arrow = menu.parentElement.querySelector('.fa-angle-down, .fa-angle-right');
+			   if (arrow) {
+				   arrow.classList.remove('fa-angle-down');
+				   arrow.classList.add('fa-angle-right');
+			   }
+			   localStorage.setItem(`${menu.id}Open`, 'false'); // Update storage for closed menus
+		   }
+	   });
+
+	   // Toggle the clicked menu only if it was closed
+	   if (!isOpen) {
+		   submenu.style.display = 'block';
+		   parentItem.classList.add('active');
+		   const arrow = parentItem.querySelector('.fa-angle-right');
+		   arrow.classList.remove('fa-angle-right');
+		   arrow.classList.add('fa-angle-down');
+		   localStorage.setItem(`${menuId}Open`, 'true');
+	   } else {
+		   submenu.style.display = 'none';
+		   parentItem.classList.remove('active');
+		   const arrow = parentItem.querySelector('.fa-angle-down');
+		   arrow.classList.remove('fa-angle-down');
+		   arrow.classList.add('fa-angle-right');
+		   localStorage.setItem(`${menuId}Open`, 'false');
+	   }
+   }
+
+   // Initialize sidebar state on page load
+   document.addEventListener('DOMContentLoaded', function() {
+	   const menus = ['employeeMenu', 'clientMenu', 'setupMenu'];
+	   
+	   menus.forEach(menuId => {
+		   const submenu = document.getElementById(menuId);
+		   const parentItem = submenu.parentElement;
+		   const isOpen = localStorage.getItem(`${menuId}Open`) === 'true';
+		   
+		   if (isOpen) {
+			   submenu.style.display = 'block';
+			   parentItem.classList.add('active');
+			   const arrow = parentItem.querySelector('.fa-angle-right');
+			  if (arrow) {
+			   arrow.classList.remove('fa-angle-right');
+			   arrow.classList.add('fa-angle-down');
+		   }
+		   }else {
+		   submenu.style.display = 'none';
+		   parentItem.classList.remove('active');
+	   }
+	   });
+
+		   // Added: Dashboard click handler to close all dropdowns
+   // document.querySelector('.nav-link[href="index.html"]').addEventListener('click', function(event) {
+   //         event.preventDefault(); // Prevent default navigation for demo
+   //         closeAllDropdowns();
+   //         // Add your dashboard navigation logic here if needed
+   //     });
+   });
+
+   // Prevent dropdown from closing when clicking sub-items
+   // Added event listener to stop propagation when clicking sub-menu links
+   document.querySelectorAll('.nav-treeview .nav-link').forEach(link => {
+	   link.addEventListener('click', function(event) {
+		   event.stopPropagation(); // Prevents the click from bubbling up to parent
+		   const parentMenu = this.closest('.nav-treeview');
+		   if (parentMenu) {
+			   localStorage.setItem(`${parentMenu.id}Open`, 'true'); // Maintain open state
+		   }
+	   });
+   });
+
+	   $('#submit').click(function(event) {
+		alert(2);
+            event.preventDefault(); // Prevent default form submission
+
+            // Collect form data into a JavaScript object
+            const employeeData = {
+                empFirstName: $('#firstName').val(),
+                empLastName: $('#lastName').val(),
+                emailId: $('input[name="email"]').val(),
+                mobileNumber: $('input[name="phone"]').val(),
+                address: $('textarea[name="address"]').val(),
+                role: $('select[name="role"]').val(),
+				createdIpAddress:"192.168.1.1",
+				createdBy: "admin"
+            };
+
+            // Convert object to JSON string
+            const jsonData = JSON.stringify(employeeData);
+
+            $.ajax({
+                type: 'POST',
+                url: 'http://localhost:8082/sunwatsolutions-emp/employees/insertEmployeeDetails',
+                contentType: 'application/json', // Set content type to JSON
+                data: jsonData, // Send JSON data
+                success: function(response) {
+
+                    // Handle success response
+					alert("Inside Success");
+                    $('#alertMessage').removeClass('alert-danger').addClass('alert-success').text('Success! New employee added successfully.').show().addClass('show');
+                    // Optionally clear the form
+                    $('#addEmployeeForm')[0].reset();
+                    updateFullName(); // Clear the full name field as well
+                },
+                error: function(xhr, status, error) {
+                    // Log error details
+                    console.error("AJAX Error:");
+                    console.error("Status:", status);
+                    console.error("Error:", error);
+                    console.error("XHR Status:", xhr.status);
+                    console.error("XHR Response Text:", xhr.responseText);
+
+                    // Handle error response
+                    let errorMessage = 'An error occurred while adding the employee.';
+                    if (xhr.responseText) {
+                        try {
+                            const errorResponse = JSON.parse(xhr.responseText);
+                            errorMessage = errorResponse.message || errorMessage;
+                        } catch (e) {
+                            errorMessage = xhr.responseText || errorMessage;
+                        }
+                    }
+                    $('#alertMessage').removeClass('alert-success').addClass('alert-danger').text('Error: ' + errorMessage).show().addClass('show');
+                }
+            });
+        });
+    });
+
+
+
+
+</script>
+
+<!-- JavaScript files -->
+
+
+
+</body>
+</html>
+
+

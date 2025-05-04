@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client Management</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- DataTables CSS -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
+
+  <!-- Optional: Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+  <div class="container py-5">
+    <h2 class="mb-4 text-primary">Client Registration</h2>
+
+    <div class="row g-4">
+      <!-- Client Form -->
+      <div class="col-md-5">
+        <form id="clientsForm" class="p-4 bg-white rounded shadow-sm border">
+          <h5 class="mb-4 fw-bold">Add New Client</h5>
+
+          <div class="mb-3">
+            <label for="clientName" class="form-label">Client Name <span class="text-danger">*</span></label>
+            <input type="text" id="clientName" name="clientName" class="form-control" placeholder="e.g. ABC Corp" required>
+          </div>
+
+          <div class="mb-3 position-relative">
+            <label for="purifierName" class="form-label">Purifier Name <span class="text-danger">*</span></label>
+            <select id="purifierName" name="purifierName" class="form-select pe-5" required>
+              <option value="" disabled selected>Select Purifier</option>
+              <option value="RO Purifier">RO Purifier</option>
+              <option value="D11-Purifier">D11-Purifier</option>
+              <option value="RO-LITE-Purifier">RO-LITE-Purifier</option>
+            </select>
+            <i class="bi bi-caret-down-fill fs-4 position-absolute" style="top: 58px; right: 18px; pointer-events: none;"></i>
+          </div>
+
+          <div class="mb-3">
+            <label for="purifierId" class="form-label">Purifier ID <span class="text-danger">*</span></label>
+            <input type="text" id="purifierId" name="purifierId" class="form-control" placeholder="e.g. PUR-001" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="installDate" class="form-label">Installation Date <span class="text-danger">*</span></label>
+            <input type="date" id="installDate" name="installDate" class="form-control" required>
+          </div>
+
+          <div class="mb-4">
+            <label for="location" class="form-label">Location</label>
+            <input type="text" id="location" name="location" class="form-control" placeholder="e.g. New York Office">
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100">Add Client</button>
+        </form>
+      </div>
+
+      <!-- Client Table -->
+      <div class="col-md-7">
+        <div class="p-4 bg-white rounded shadow-sm border">
+          <h5 class="mb-4 fw-bold">Client List</h5>
+          <table id="clientsTable" class="display table table-striped" style="width:100%">
+            <thead>
+              <tr>
+                <th>Client Name</th>
+                <th>Purifier Name</th>
+                <th>Purifier ID</th>
+                <th>Install Date</th>
+                <th>Location</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- JS will insert rows -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- jQuery (required for DataTables) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Bootstrap Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- DataTables JS -->
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
+  <script>
+    let dataTable;
+
+    $(document).ready(function () {
+      // Initialize DataTable
+      dataTable = $('#clientsTable').DataTable();
+
+      // Handle form submission
+      $('#clientsForm').on('submit', function (e) {
+        e.preventDefault();
+
+        const clientName = $('#clientName').val();
+        const purifierName = $('#purifierName').val();
+        const purifierId = $('#purifierId').val();
+        const installDate = $('#installDate').val();
+        const location = $('#location').val();
+
+        // Add row to DataTable
+        dataTable.row.add([
+          clientName,
+          purifierName,
+          purifierId,
+          installDate,
+          location
+        ]).draw();
+
+        // Reset form
+        this.reset();
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,695 @@
+<html>
+
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>Ready Bootstrap Dashboard</title>
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+	<link rel="stylesheet" href="assets/css/ready.css">
+	<link rel="stylesheet" href="assets/css/demo.css">
+
+	<style>
+/* Checklist container styling */
+.checklist-container {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    max-height: 250px;
+    overflow-y: auto;
+    background: #fff;
+    display: none;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Filter container */
+.filter-container {
+    margin-bottom: 10px;
+}
+
+/* Checklist items */
+.checklist-items {
+    max-height: 180px;
+    overflow-y: auto;
+}
+
+/* Individual checklist item */
+.checklist-item {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-radius: 4px;
+    margin-bottom: 2px;
+    cursor: pointer;
+}
+
+/* Hover effect */
+.checklist-item:hover {
+    background-color: #f5f5f5;
+}
+
+/* Checkbox styling */
+.checklist-item input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Selected item styling */
+.checklist-item.selected {
+    background-color: #e6f7ff;
+}
+.form-select {
+        height: 40px;
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+		
+
+    </style>
+
+</head>
+<body>
+
+	<!-- Include jQuery and Multi-List Plugin -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/multiselect-two-sides/dist/js/multiselect.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/multiselect-two-sides/dist/css/multiselect.min.css"> -->
+
+
+
+    <div  class="wrapper">
+
+		<div class="main-header">
+			<div class="logo-header">
+				<a href="index.html" class="logo">
+					Admin Dashboard
+				</a>
+				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<button class="topbar-toggler more"><i class="la la-ellipsis-v"></i></button>
+			</div>
+			<nav class="navbar navbar-header navbar-expand-lg">
+				<div class="container-fluid">
+					
+					<form class="navbar-left navbar-form nav-search mr-md-3" action="">
+						<div class="input-group">
+							<input type="text" placeholder="Search ..." class="form-control">
+							<div class="input-group-append">
+								<span class="input-group-text">
+									<i class="la la-search search-icon"></i>
+								</span>
+							</div>
+						</div>
+					</form>
+					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+						<li class="nav-item dropdown hidden-caret">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<i class="la la-envelope"></i>
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="#">Action</a>
+								<a class="dropdown-item" href="#">Another action</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#">Something else here</a>
+							</div>
+						</li>
+						<li class="nav-item dropdown hidden-caret">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<i class="la la-bell"></i>
+								<span class="notification">3</span>
+							</a>
+							<ul class="dropdown-menu notif-box" aria-labelledby="navbarDropdown">
+								<li>
+									<div class="dropdown-title">You have 4 new notification</div>
+								</li>
+								<li>
+									<div class="notif-center">
+										<a href="#">
+											<div class="notif-icon notif-primary"> <i class="la la-user-plus"></i> </div>
+											<div class="notif-content">
+												<span class="block">
+													New user registered
+												</span>
+												<span class="time">5 minutes ago</span> 
+											</div>
+										</a>
+										<a href="#">
+											<div class="notif-icon notif-success"> <i class="la la-comment"></i> </div>
+											<div class="notif-content">
+												<span class="block">
+													Rahmad commented on Admin
+												</span>
+												<span class="time">12 minutes ago</span> 
+											</div>
+										</a>
+										<a href="#">
+											<div class="notif-img"> 
+												<img src="assets/img/profile2.jpg" alt="Img Profile">
+											</div>
+											<div class="notif-content">
+												<span class="block">
+													Reza send messages to you
+												</span>
+												<span class="time">12 minutes ago</span> 
+											</div>
+										</a>
+										<a href="#">
+											<div class="notif-icon notif-danger"> <i class="la la-heart"></i> </div>
+											<div class="notif-content">
+												<span class="block">
+													Farrah liked Admin
+												</span>
+												<span class="time">17 minutes ago</span> 
+											</div>
+										</a>
+									</div>
+								</li>
+								<li>
+									<a class="see-all" href="javascript:void(0);"> <strong>See all notifications</strong> <i class="la la-angle-right"></i> </a>
+								</li>
+							</ul>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false"> <img src="assets/img/profile.jpg" alt="user-img" width="36" class="img-circle"><span >Hizrian</span></span> </a>
+							<ul class="dropdown-menu dropdown-user">
+								<li>
+									<div class="user-box">
+										<div class="u-img"><img src="assets/img/profile.jpg" alt="user"></div>
+										<div class="u-text">
+											<h4>Hizrian</h4>
+											<p class="text-muted">hello@themekita.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a>
+										</div>
+									</div>
+								</li>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#"><i class="ti-user"></i> My Profile</a>
+								<a class="dropdown-item" href="#"></i> My Balance</a>
+								<a class="dropdown-item" href="#"><i class="ti-email"></i> Inbox</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#"><i class="ti-settings"></i> Account Setting</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#"><i class="fa fa-power-off"></i> Logout</a>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+
+
+
+			<div class="sidebar">
+				<div class="scrollbar-inner sidebar-wrapper">
+					<div class="user">
+						<div class="photo"><img src="assets/img/sunwat_logo.png"></div>
+						<div class="info">
+							<a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+								<span>SunWatSolutions<span class="user-level">Administrator</span><span class="caret"></span></span>
+							</a>
+							<div class="clearfix"></div>
+							<div class="collapse in" id="collapseExample" aria-expanded="true" style="">
+								<ul class="nav">
+									<li><a href="#profile"><span class="link-collapse">My Profile</span></a></li>
+									<li><a href="#edit"><span class="link-collapse">Edit Profile</span></a></li>
+									<li><a href="#settings"><span class="link-collapse">Settings</span></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+	
+					<ul class="nav">
+						<!-- Dashboard -->
+						<li class="nav-item">
+							<a href="index.html" class="nav-link">
+								<i class="la la-dashboard"></i>
+								<p>Dashboard</p>
+								<span class="badge badge-count">5</span>
+							</a>
+						</li>
+	
+						<!-- Employees Menu -->
+						<li class="nav-item">
+							<a href="#" class="nav-link" onclick="toggleSubmenu(event, 'employeeMenu')">
+								<i class="la la-users"></i>
+								<p>Employees</p>
+								<span class="badge badge-success">New</span>
+								<i class="fas fa-angle-right float-right mt-1"></i>
+							</a>
+							<ul class="nav nav-treeview" id="employeeMenu" style="display: none;">
+								<li class="nav-item">
+									<a href="./employee.html" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Employee Info</p>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href="./add-employee.html" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Add Employee</p>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href="./Task-assign.html" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Task Assign</p>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href="./Track-location.html" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Employee Reports</p>
+									</a>
+								</li>
+							</ul>
+						</li>
+	
+						<!-- Clients Menu -->
+						<li class="nav-item">
+							<a href="#" class="nav-link" onclick="toggleSubmenu(event, 'clientMenu')">
+								<i class="la la-users"></i>
+								<p>Clients</p>
+								<span class="badge badge-success">New</span>
+								<i class="fas fa-angle-right float-right mt-1"></i>
+							</a>
+							<ul class="nav nav-treeview" id="clientMenu" style="display: none;">
+								<li class="nav-item">
+									<a href="./clients.html" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Add Client</p>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href="./client-info.html" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Client Info</p>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href="./ServiceDate.html" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Add Service Date</p>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href="./payment.html" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Payment Page</p>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href="./paymenthistory.html" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Payment history</p>
+									</a>
+								</li>
+							</ul>
+						</li>
+	
+						<!-- Setup Menu -->
+						<li class="nav-item">
+							<a href="#" class="nav-link" onclick="toggleSubmenu(event, 'setupMenu')">
+								<i class="la la-cogs"></i>
+								<p>Setup</p>
+								<span class="badge badge-success">New</span>
+								<i class="fas fa-angle-right float-right mt-1"></i>
+							</a>
+							<ul class="nav nav-treeview" id="setupMenu" style="display: none;">
+								<li class="nav-item">
+									<a href="./checklist.html" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Checklist</p>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href="./purifier-info.html" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Purifier Info</p>
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+	
+				</div>
+			</div>
+
+
+
+      <!-- ASSIGN TASK PAGE -->
+	  <div id="assignTask" class="main-panel">
+		<div class="content">
+			<h2>Assign Task</h2>
+	
+			<!-- Bootstrap Alert (Hidden Initially) -->
+			<div id="alertMessage" class="alert alert-success alert-dismissible fade" role="alert" style="display: none;">
+				<strong>Success!</strong> Task assigned successfully.
+				<button type="button" class="btn-close" onclick="hideAlert()" aria-label="Close"></button>
+			</div>
+	
+			<div class="assign-task-container" style="display: flex; gap: 20px; flex-wrap: wrap;">
+				<!-- Assign Task Form (Left Side) -->
+				<form id="assignTaskForm" class="p-3 shadow bg-white rounded" style="flex: 1; min-width: 300px;">
+					<!-- Employee Dropdown with dummy names -->
+					<div class="mb-3">
+						<label class="form-label">Employee</label>
+						<select class="form-select" name="employee" required>
+							<option value="">Select Employee</option>
+							<option>Vamshi</option>
+							<option>Suresh</option>
+							<option>Ramesh</option>
+							<option>Kushal</option>
+							<option>Aditya</option>
+						</select>
+					</div>
+					<!-- Client Dropdown -->
+					<div class="mb-3">
+						<label class="form-label">Client</label>
+						<select class="form-select" name="client" required>
+							<option value="">Select Client</option>
+							<option>ABC Corp</option>
+							<option>XYZ Ltd</option>
+							<option>Acme Inc</option>
+						</select>
+					</div>
+
+
+				
+
+<!-- Checklist Multi-Select -->
+<div class="mb-3 checklist-wrapper">
+    <label class="form-label">Checklist</label>
+    <div class="dropdown">
+        <input type="text" class="form-control" id="checklistInput" placeholder="Select Checklist" readonly>
+        <div class="checklist-container" id="checklistDropdown">
+            <div class="filter-container">
+                <input type="text" class="form-control" id="filterChecklist" placeholder="Filter">
+            </div>
+            <div class="checklist-items" id="checklistItems">
+                <!-- Checklist items will be injected dynamically here -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+					<!-- Task Date -->
+					<div class="mb-3">
+						<label class="form-label">Task Date</label>
+						<input type="date" class="form-control" name="taskDate" required>
+					</div>
+					<!-- Task Duration (Time Input in HH:MM) -->
+					<div class="mb-3">
+						<label class="form-label">Task Duration (HH:MM)</label>
+						<input type="time" class="form-control" name="taskDuration" required>
+					</div>
+					<button class="btn btn-primary" type="submit">Assign Task</button>
+				</form>
+	
+				<!-- Assigned Task Table (Right Side) -->
+			<!-- Assigned Task Table (Right Side) -->
+<div class="table-container shadow bg-white rounded p-3" style="flex: 1; min-width: 300px;">
+    <h4>Assigned Tasks</h4>
+    <table class="table table-striped" id="assignTaskTable">
+        <thead>
+            <tr>
+                <th>Employee</th>
+                <th>Client</th>
+                <th>Checklist</th>
+                <th>Task Date</th>
+                <th>Duration</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Vamshi</td>
+                <td>ABC Corp</td>
+                <td>Verify pipe connections, Check water pressure</td>
+                <td>2025-04-01</td>
+                <td>02:30</td>
+            </tr>
+            <tr>
+                <td>Suresh</td>
+                <td>XYZ Ltd</td>
+                <td>Inspect filter condition, Ensure power supply is stable</td>
+                <td>2025-04-03</td>
+                <td>03:00</td>
+            </tr>
+            <tr>
+                <td>Ramesh</td>
+                <td>Acme Inc</td>
+                <td>Check TDS levels, Clean the filters</td>
+                <td>2025-04-05</td>
+                <td>01:45</td>
+            </tr>
+            <tr>
+                <td>Kushal</td>
+                <td>ABC Corp</td>
+                <td>Test leakage points, Inspect motor condition</td>
+                <td>2025-04-07</td>
+                <td>02:00</td>
+            </tr>
+            <tr>
+                <td>Aditya</td>
+                <td>XYZ Ltd</td>
+                <td>Ensure water flow is smooth, Check water pressure</td>
+                <td>2025-04-10</td>
+                <td>02:15</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Include DataTables CSS and JS -->
+<link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.min.css">
+<script src="https://cdn.datatables.net/2.2.2/js/dataTables.min.js"></script>
+
+<!-- Initialize DataTables -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        let table = new DataTable('#assignTaskTable');
+    });
+</script>
+			</div>
+		</div>
+	</div>
+	
+	
+
+</div>
+
+<script>
+
+const checklistItems = [
+    'Check water level',
+    'Verify pipe connections',
+    'Inspect filter condition',
+    'Ensure power supply is stable',
+    'Check water pressure',
+    'Clean the filters',
+    'Inspect motor condition',
+    'Test leakage points',
+    'Check TDS levels',
+    'Ensure water flow is smooth'
+];
+
+// Function to populate the checklist dropdown
+function populateChecklistItems() {
+    const checklistItemsContainer = document.getElementById('checklistItems');
+    
+    // Clear existing items if any
+    checklistItemsContainer.innerHTML = '';
+    
+    // Add each checklist item to the dropdown
+    checklistItems.forEach((item, index) => {
+        const checklistItem = document.createElement('div');
+        checklistItem.className = 'checklist-item';
+        
+        // Create the checkbox and label
+        checklistItem.innerHTML = `
+            <input type="checkbox" id="checklist-${index}" name="checklist" value="${item}">
+            <label for="checklist-${index}">${item}</label>
+        `;
+        
+        checklistItemsContainer.appendChild(checklistItem);
+    });
+}
+
+
+	
+
+
+$(document).ready(function() {
+    // Toggle dropdown when clicking the input field
+
+	populateChecklistItems();
+    $("#checklistInput").click(function(event) {
+        event.stopPropagation(); // Prevent click from bubbling up
+        if ($("#checklistDropdown").is(":visible")) {
+            $("#checklistDropdown").hide();
+        } else {
+            $("#checklistDropdown").show();
+        }
+    });
+
+    // Close dropdown when clicking outside
+    $(document).click(function() {
+        $("#checklistDropdown").hide();
+    });
+
+    // Prevent dropdown from closing when clicking inside
+    $("#checklistDropdown").click(function(event) {
+        event.stopPropagation(); // Prevents event from propagating to document click
+    });
+
+    // Handle checkbox selection using event delegation to support dynamically added items
+    $(document).on("change", "input[name='checklist']", function() {
+        updateSelectedItems();
+    });
+
+    // Handle clicking on checklist items dynamically
+    $(document).on("click", ".checklist-item", function(event) {
+        if (event.target.tagName !== 'INPUT') { // Ensure it doesn't trigger when clicking the checkbox directly
+            const checkbox = $(this).find('input[type="checkbox"]');
+            checkbox.prop('checked', !checkbox.prop('checked')).trigger('change');
+        }
+    });
+
+    // Filter checklist items dynamically
+    $("#filterChecklist").on("keyup", function() {
+        const value = $(this).val().toLowerCase();
+        $(".checklist-item").each(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+        });
+    });
+
+    // Function to update selected checklist items in the input field
+    function updateSelectedItems() {
+        const selectedItems = [];
+        $("input[name='checklist']:checked").each(function() {
+            selectedItems.push($(this).val());
+            $(this).closest('.checklist-item').addClass('selected');
+        });
+
+        $("input[name='checklist']:not(:checked)").each(function() {
+            $(this).closest('.checklist-item').removeClass('selected');
+        });
+
+        $("#checklistInput").val(selectedItems.length > 0 ? selectedItems.join(', ') : '');
+    }
+
+    // Prevent duplicate tasks and handle form submission
+    $("#assignTaskForm").on("submit", function(event) {
+        event.preventDefault();
+
+        const employee = this.employee.value;
+        const client = this.client.value;
+        const checklist = $("input[name='checklist']:checked").map(function() {
+            return $(this).val();
+        }).get();
+        const taskDate = this.taskDate.value;
+        const taskDuration = this.taskDuration.value;
+
+        if (checklist.length === 0) {
+            alert("Please select at least one checklist item.");
+            return;
+        }
+
+        // Append new task to the table safely
+        $("#assignTaskTable tbody").append(`
+            <tr>
+                <td>${employee}</td>
+                <td>${client}</td>
+                <td>${checklist.join(', ')}</td>
+                <td>${taskDate}</td>
+                <td>${taskDuration}</td>
+            </tr>
+        `);
+
+        showAlert(); // Show success alert
+        this.reset(); // Reset form fields
+    });
+
+    // Function to show alert message
+    function showAlert() {
+        const alertBox = $("#alertMessage");
+        alertBox.show().addClass("show");
+        setTimeout(hideAlert, 3000);
+    }
+
+    // Function to hide alert message
+    function hideAlert() {
+        $("#alertMessage").removeClass("show").fadeOut();
+    }
+
+    // Sidebar submenu toggle function
+    $(".nav-link").click(function(event) {
+        const menuId = $(this).attr("onclick").match(/'([^']+)'/)[1]; // Extract menu ID from onclick
+        toggleSubmenu(event, menuId);
+    });
+
+    function toggleSubmenu(event, menuId) {
+        event.preventDefault();
+        const submenu = $("#" + menuId);
+        const parentItem = submenu.parent();
+        const isOpen = submenu.is(":visible");
+
+        // Close all other submenus
+        $(".nav-treeview").not(submenu).slideUp().parent().removeClass("active");
+
+        if (!isOpen) {
+            submenu.slideDown();
+            parentItem.addClass("active");
+        } else {
+            submenu.slideUp();
+            parentItem.removeClass("active");
+        }
+    }
+
+    // Initialize sidebar state on page load
+    $(document).ready(function() {
+        $(".nav-treeview").each(function() {
+            const menuId = $(this).attr("id");
+            if (localStorage.getItem(menuId + "Open") === "true") {
+                $(this).show().parent().addClass("active");
+            }
+        });
+    });
+
+    // Maintain open state when navigating inside submenu
+    $(".nav-treeview .nav-link").click(function(event) {
+        event.stopPropagation();
+        localStorage.setItem($(this).closest(".nav-treeview").attr("id") + "Open", "true");
+    });
+});
+
+
+
+</script>
+
+<!-- JavaScript files -->
+<script src="assets/js/core/jquery.3.2.1.min.js"></script>
+<script src="assets/js/core/popper.min.js"></script>
+<script src="assets/js/core/bootstrap.min.js"></script>
+<script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+<script src="assets/js/ready.min.js"></script>
+
+
+
+
+</body>
+
+
+
+
+</html>

@@ -110,119 +110,125 @@
 										<div class="u-img"><img src="assets/img/profile.jpg" alt="user"></div>
 										<div class="u-text">
 											<h4>Hizrian</h4>
-											<p class="text-muted">hello@themekita.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
+											<p class="text-muted">hello@themekita.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a>
 										</div>
-									</li>
-									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#"><i class="ti-user"></i> My Profile</a>
-									<a class="dropdown-item" href="#"></i> My Balance</a>
-									<a class="dropdown-item" href="#"><i class="ti-email"></i> Inbox</a>
-									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#"><i class="ti-settings"></i> Account Setting</a>
-									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#"><i class="fa fa-power-off"></i> Logout</a>
-								</ul>
-								<!-- /.dropdown-user -->
-							</li>
-						</ul>
-					</div>
-				</nav>
-			</div>
+									</div>
+								</li>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#"><i class="ti-user"></i> My Profile</a>
+								<a class="dropdown-item" href="#"></i> My Balance</a>
+								<a class="dropdown-item" href="#"><i class="ti-email"></i> Inbox</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#"><i class="ti-settings"></i> Account Setting</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#"><i class="fa fa-power-off"></i> Logout</a>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+
+
 			<div class="sidebar">
 				<div class="scrollbar-inner sidebar-wrapper">
 					<div class="user">
-						<div class="photo">
-							<img src="assets/img/profile.jpg">
-						</div>
+						<div class="photo"><img src="assets/img/sunwat_logo.png"></div>
 						<div class="info">
 							<a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
-								<span>
-									Hizrian
-									<span class="user-level">Administrator</span>
-									<span class="caret"></span>
-								</span>
+								<span>SunWatSolutions<span class="user-level">Administrator</span><span class="caret"></span></span>
 							</a>
 							<div class="clearfix"></div>
-
 							<div class="collapse in" id="collapseExample" aria-expanded="true" style="">
 								<ul class="nav">
-									<li>
-										<a href="#profile">
-											<span class="link-collapse">My Profile</span>
-										</a>
-									</li>
-									<li>
-										<a href="#edit">
-											<span class="link-collapse">Edit Profile</span>
-										</a>
-									</li>
-									<li>
-										<a href="#settings">
-											<span class="link-collapse">Settings</span>
-										</a>
-									</li>
+									<li><a href="#profile"><span class="link-collapse">My Profile</span></a></li>
+									<li><a href="#edit"><span class="link-collapse">Edit Profile</span></a></li>
+									<li><a href="#settings"><span class="link-collapse">Settings</span></a></li>
 								</ul>
 							</div>
 						</div>
 					</div>
 					<ul class="nav">
+						<!-- Modified: Closes dropdown when clicking Dashboard -->
 						<li class="nav-item">
-							<a href="index.html">
+							<a href="index.html" onclick="closeDropdown('employeeMenu')">
 								<i class="la la-dashboard"></i>
 								<p>Dashboard</p>
 								<span class="badge badge-count">5</span>
 							</a>
 						</li>
+						<!-- Modified: Employees menu toggles dropdown -->
 						<li class="nav-item active">
-							<a href="components.html">
-								<i class="la la-table"></i>
-								<p>Components</p>
-								<span class="badge badge-count">14</span>
+							<a href="#" onclick="toggleSubmenu(event, 'employeeMenu')">
+								<i class="la la-users"></i>
+								<p>Employees</p>
+								<span class="badge badge-success">New</span>
+								<span class="caret"></span>
 							</a>
+							<!-- Modified: Submenu items navigate without closing dropdown -->
+							<ul class="nav nav-treeview" id="employeeMenu">
+								<li class="nav-item">
+									<a href="employee.html" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Employee Info</p>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href="add-employee.html" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Add Employee</p>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href="Task-assign.html" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Task Assign</p>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href="Track-location.html" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Track Location</p>
+									</a>
+								</li>
+							</ul>
 						</li>
+						<!-- Modified: Closes dropdown when clicking Update To Pro -->
 						<li class="nav-item">
-							<a href="forms.html">
-								<i class="la la-keyboard-o"></i>
-								<p>Forms</p>
-								<span class="badge badge-count">50</span>
-							</a>
+							<a href="clients.html" onclick="showPage('clients')">
+								<i class="fas fa-user-friends"></i>
+								<span>Clients</span>
+							  </a>
 						</li>
-						<li class="nav-item">
-							<a href="tables.html">
-								<i class="la la-th"></i>
-								<p>Tables</p>
-								<span class="badge badge-count">6</span>
+
+						<li class="nav-item active">
+							<a href="#" onclick="toggleSubmenu(event, 'setupMenu')">
+								<i class="la la-cogs"></i>
+								<p>Setup</p>
+								<span class="badge badge-success">New</span>
+								<span class="caret"></span>
 							</a>
-						</li>
-						<li class="nav-item">
-							<a href="notifications.html">
-								<i class="la la-bell"></i>
-								<p>Notifications</p>
-								<span class="badge badge-success">3</span>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a href="typography.html">
-								<i class="la la-font"></i>
-								<p>Typography</p>
-								<span class="badge badge-danger">25</span>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a href="icons.html">
-								<i class="la la-fonticons"></i>
-								<p>Icons</p>
-							</a>
-						</li>
-						<li class="nav-item update-pro">
-							<button  data-toggle="modal" data-target="#modalUpdate">
-								<i class="la la-hand-pointer-o"></i>
-								<p>Update To Pro</p>
-							</button>
+							<ul class="nav nav-treeview" id="setupMenu" style="display: none;">
+								<li class="nav-item">
+									<a href="checklist.html" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Checklist</p>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href="purifier-info.html" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Purifier Info</p>
+									</a>
+								</li>
+							</ul>
 						</li>
 					</ul>
 				</div>
 			</div>
+
+
+			
 			<div class="main-panel">
 				<div class="content">
 					<div class="container-fluid">
@@ -661,6 +667,63 @@
 		</div>
 	</div>
 </body>
+
+<script>
+	// Added: Check and set initial dropdown state from localStorage on page load
+	document.addEventListener('DOMContentLoaded', function() {
+		const submenu = document.getElementById('employeeMenu');
+		const parentItem = submenu.parentElement;
+		const isOpen = localStorage.getItem('employeeMenuOpen') === 'true';
+
+		if (isOpen) {
+			// Modified: Remove 'display: none' from inline style and use CSS class
+			submenu.style.display = 'block';
+			parentItem.classList.add('active');
+		} else {
+			submenu.style.display = 'none';
+			parentItem.classList.remove('active');
+		}
+	});
+
+	// Modified: Toggle submenu and save state to localStorage
+	function toggleSubmenu(event, menuId) {
+		event.preventDefault(); // Prevent default anchor behavior
+		const submenu = document.getElementById(menuId);
+		const parentItem = submenu.parentElement;
+		const isOpen = submenu.style.display === 'block';
+
+		if (isOpen) {
+			submenu.style.display = 'none';
+			parentItem.classList.remove('active');
+			localStorage.setItem('employeeMenuOpen', 'false');
+		} else {
+			submenu.style.display = 'block';
+			parentItem.classList.add('active');
+			localStorage.setItem('employeeMenuOpen', 'true');
+		}
+	}
+
+	// Modified: Close dropdown and update localStorage
+	function closeDropdown(menuId) {
+		const submenu = document.getElementById(menuId);
+		const parentItem = submenu.parentElement;
+		submenu.style.display = 'none';
+		parentItem.classList.remove('active');
+		localStorage.setItem('employeeMenuOpen', 'false');
+	}
+
+	// Added: Ensure submenu clicks don’t close dropdown
+	document.querySelectorAll('#employeeMenu .nav-link').forEach(link => {
+		link.addEventListener('click', function(event) {
+			// Keep dropdown open by not modifying its state
+			localStorage.setItem('employeeMenuOpen', 'true'); // Ensure it stays open after navigation
+		});
+	});
+</script>
+
+
+
+
 <script src="assets/js/core/jquery.3.2.1.min.js"></script>
 <script src="assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
 <script src="assets/js/core/popper.min.js"></script>

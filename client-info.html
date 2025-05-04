@@ -1,0 +1,894 @@
+<html>
+
+<head>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>Ready Bootstrap Dashboard</title>
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+	<link rel="stylesheet" href="assets/css/ready.css">
+	<link rel="stylesheet" href="assets/css/demo.css">
+	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"> -->
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- DataTables CSS -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css"/>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> -->
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  
+
+	 
+<body>
+    <div  class="wrapper">
+
+      <div class="main-header">
+        <div class="logo-header">
+          <a href="index.html" class="logo">
+            Admin Dashboard
+          </a>
+          <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <button class="topbar-toggler more"><i class="la la-ellipsis-v"></i></button>
+        </div>
+        <nav class="navbar navbar-header navbar-expand-lg">
+          <div class="container-fluid">
+            
+            <form class="navbar-left navbar-form nav-search mr-md-3" action="">
+              <div class="input-group">
+                <input type="text" placeholder="Search ..." class="form-control">
+                <div class="input-group-append">
+                  <span class="input-group-text">
+                    <i class="la la-search search-icon"></i>
+                  </span>
+                </div>
+              </div>
+            </form>
+            <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+              <li class="nav-item dropdown hidden-caret">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="la la-envelope"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown hidden-caret">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="la la-bell"></i>
+                  <span class="notification">3</span>
+                </a>
+                <ul class="dropdown-menu notif-box" aria-labelledby="navbarDropdown">
+                  <li>
+                    <div class="dropdown-title">You have 4 new notification</div>
+                  </li>
+                  <li>
+                    <div class="notif-center">
+                      <a href="#">
+                        <div class="notif-icon notif-primary"> <i class="la la-user-plus"></i> </div>
+                        <div class="notif-content">
+                          <span class="block">
+                            New user registered
+                          </span>
+                          <span class="time">5 minutes ago</span> 
+                        </div>
+                      </a>
+                      <a href="#">
+                        <div class="notif-icon notif-success"> <i class="la la-comment"></i> </div>
+                        <div class="notif-content">
+                          <span class="block">
+                            Rahmad commented on Admin
+                          </span>
+                          <span class="time">12 minutes ago</span> 
+                        </div>
+                      </a>
+                      <a href="#">
+                        <div class="notif-img"> 
+                          <img src="assets/img/profile2.jpg" alt="Img Profile">
+                        </div>
+                        <div class="notif-content">
+                          <span class="block">
+                            Reza send messages to you
+                          </span>
+                          <span class="time">12 minutes ago</span> 
+                        </div>
+                      </a>
+                      <a href="#">
+                        <div class="notif-icon notif-danger"> <i class="la la-heart"></i> </div>
+                        <div class="notif-content">
+                          <span class="block">
+                            Farrah liked Admin
+                          </span>
+                          <span class="time">17 minutes ago</span> 
+                        </div>
+                      </a>
+                    </div>
+                  </li>
+                  <li>
+                    <a class="see-all" href="javascript:void(0);"> <strong>See all notifications</strong> <i class="la la-angle-right"></i> </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false"> <img src="assets/img/profile.jpg" alt="user-img" width="36" class="img-circle"><span >Hizrian</span></span> </a>
+                <ul class="dropdown-menu dropdown-user">
+                  <li>
+                    <div class="user-box">
+                      <div class="u-img"><img src="assets/img/profile.jpg" alt="user"></div>
+                      <div class="u-text">
+                        <h4>Hizrian</h4>
+                        <p class="text-muted">hello@themekita.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a>
+                      </div>
+                    </div>
+                  </li>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#"><i class="ti-user"></i> My Profile</a>
+                  <a class="dropdown-item" href="#"></i> My Balance</a>
+                  <a class="dropdown-item" href="#"><i class="ti-email"></i> Inbox</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#"><i class="ti-settings"></i> Account Setting</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#"><i class="fa fa-power-off"></i> Logout</a>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+  
+
+
+          
+            
+      <div class="sidebar">
+        <div class="scrollbar-inner sidebar-wrapper">
+            <div class="user">
+                <div class="photo"><img src="assets/img/sunwat_logo.png"></div>
+                <div class="info">
+                    <a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+                        <span>SunWatSolutions<span class="user-level">Administrator</span><span class="caret"></span></span>
+                    </a>
+                    <div class="clearfix"></div>
+                    <div class="collapse in" id="collapseExample" aria-expanded="true">
+                        <ul class="nav">
+                            <li><a href="#profile"><span class="link-collapse">My Profile</span></a></li>
+                            <li><a href="#edit"><span class="link-collapse">Edit Profile</span></a></li>
+                            <li><a href="#settings"><span class="link-collapse">Settings</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    
+            <ul class="nav">
+                <!-- Dashboard -->
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <i class="la la-dashboard"></i>
+                        <p>Dashboard</p>
+                        <span class="badge badge-count">5</span>
+                    </a>
+                </li>
+    
+                <!-- Employees Menu -->
+                <li class="nav-item">
+                    <a href="#" class="nav-link" onclick="toggleSubmenu(event, 'employeeMenu')">
+                        <i class="la la-users"></i>
+                        <p>Employees</p>
+                        <span class="badge badge-success">New</span>
+                        <i class="fas fa-angle-right float-right mt-1"></i>
+                    </a>
+                    <ul class="nav nav-treeview" id="employeeMenu" style="display: none;">
+                        <li class="nav-item">
+                            <a href="./employee.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Employee Info</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./add-employee.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add Employee</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./Task-assign.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Task Assign</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./Track-location.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Employee Reports</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+    
+                <!-- Clients Menu -->
+                <li class="nav-item">
+                    <a href="#" class="nav-link" onclick="toggleSubmenu(event, 'clientMenu')">
+                        <i class="la la-users"></i>
+                        <p>Clients</p>
+                        <span class="badge badge-success">New</span>
+                        <i class="fas fa-angle-right float-right mt-1"></i>
+                    </a>
+                    <ul class="nav nav-treeview" id="clientMenu" style="display: none;">
+                        <li class="nav-item">
+                            <a href="./clients.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add Client</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./client-info.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Client Info</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./ServiceDate.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add Service Date</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./payment.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Payment Page</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                          <a href="./paymenthistory.html" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Payment history</p>
+                          </a>
+                        </li>
+                    </ul>
+                </li>
+    
+                <!-- Setup Menu -->
+                <li class="nav-item">
+                    <a href="#" class="nav-link" onclick="toggleSubmenu(event, 'setupMenu')">
+                        <i class="la la-cogs"></i>
+                        <p>Setup</p>
+                        <span class="badge badge-success">New</span>
+                        <i class="fas fa-angle-right float-right mt-1"></i>
+                    </a>
+                    <ul class="nav nav-treeview" id="setupMenu" style="display: none;">
+                        <li class="nav-item">
+                            <a href="./checklist.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Checklist</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./purifier-info.html" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Purifier Info</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+					
+
+
+
+   <!-- CLIENTS PAGE -->
+   <div id="clients" class="main-panel">
+    <div class="content">
+        <h2>Clients</h2>
+
+        <!-- Bootstrap Alert (Hidden Initially) -->
+        <div id="alertMessage" class="alert alert-success alert-dismissible fade" role="alert" style="display: none;">
+            <strong>Success!</strong> New client added successfully.
+            <button type="button" class="btn-close" onclick="hideAlert()" aria-label="Close"></button>
+        </div>
+
+        <div class="clients-container" style="display: flex; gap: 20px; flex-wrap: wrap;">
+             
+            <div class="container py-5">
+                <!-- <h4 class="mb-4 text-primary">Dynamic Client Table</h4> -->
+            
+                <!-- Controls -->
+                <!-- <div class="mb-3 d-flex gap-2">
+                  <button class="btn btn-success" onclick="addColumn()">➕ Add Column</button>
+                  <button class="btn btn-danger" onclick="removeLastColumn()">➖ Remove Last Column</button>
+                </div> -->
+
+              <table id="clientsTable" class="table table-bordered table-striped">
+                <thead>
+                  <tr id="tableHeaderRow">
+                    <th>Client Name</th>
+                    <th>Purifier Name</th>
+                    <th>Purifier ID</th>
+                    <th>Install Date</th>
+                    <th>Location</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+                </table>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<script>
+  var data = [
+  {
+    "Client Name": "Mrs. Kristin Adams",
+    "Purifier Name": "Pierce, Knight and Bennett",
+    "Purifier ID": "555e5ff7-c8c5-4ad4-a0b5-3270cda37220",
+    "Install Date": "1987-01-20",
+    "Location": "East Michaelshire"
+  },
+  {
+    "Client Name": "Alexis Johnson",
+    "Purifier Name": "Ferrell and Sons",
+    "Purifier ID": "28797f20-c16a-462a-aa85-20b6cda1fb65",
+    "Install Date": "1990-07-28",
+    "Location": "Navarromouth"
+  },
+  {
+    "Client Name": "Amy Hogan",
+    "Purifier Name": "Hall and Sons",
+    "Purifier ID": "c85fe8f1-50c2-435b-a5c1-e900f71c9af4",
+    "Install Date": "2005-01-06",
+    "Location": "New Heathershire"
+  },
+  {
+    "Client Name": "Lauren Cox",
+    "Purifier Name": "English-Kirby",
+    "Purifier ID": "8b9c4ae3-ab8c-4b99-a473-36f84ef1de46",
+    "Install Date": "2007-11-12",
+    "Location": "Emilyfurt"
+  },
+  {
+    "Client Name": "Karina Ford",
+    "Purifier Name": "Jennings Inc",
+    "Purifier ID": "b2e31b74-3b8f-45d5-8280-21e4170f870c",
+    "Install Date": "2004-02-14",
+    "Location": "West Colleen"
+  },
+  {
+    "Client Name": "Courtney Lopez",
+    "Purifier Name": "Smith, Malone and Kane",
+    "Purifier ID": "ac6c27d7-1d78-4227-a869-b32fe725f593",
+    "Install Date": "1972-08-08",
+    "Location": "Port Emilyburgh"
+  },
+  {
+    "Client Name": "Tiffany Ritter",
+    "Purifier Name": "Mosley, Cobb and Stephens",
+    "Purifier ID": "c09117eb-c42e-4325-ae46-8b8a00e5b556",
+    "Install Date": "2020-04-22",
+    "Location": "Lake Johnmouth"
+  },
+  {
+    "Client Name": "Amy Acosta",
+    "Purifier Name": "Ramirez, Coleman and Rodriguez",
+    "Purifier ID": "b6a5d9a4-d4f4-44ea-b6de-4a1e30f9b88b",
+    "Install Date": "1980-10-01",
+    "Location": "Thomasmouth"
+  },
+  {
+    "Client Name": "Mia Terry",
+    "Purifier Name": "Yang-Wolf",
+    "Purifier ID": "7fa37aae-a1e4-43ca-adfc-aeadffd88f39",
+    "Install Date": "1991-01-29",
+    "Location": "West Kelseyhaven"
+  },
+  {
+    "Client Name": "Dana Tran",
+    "Purifier Name": "Henry-Tanner",
+    "Purifier ID": "7e1d0fe3-c264-4a93-990a-0e4df13825cc",
+    "Install Date": "1980-06-28",
+    "Location": "Nathanielburgh"
+  },
+  {
+    "Client Name": "Linda Lee",
+    "Purifier Name": "Stephenson Inc",
+    "Purifier ID": "52b5ea39-3589-4ffc-9f16-9269f4fb95f3",
+    "Install Date": "2000-06-14",
+    "Location": "Garciahaven"
+  },
+  {
+    "Client Name": "Christina Gray",
+    "Purifier Name": "Walker-Richard",
+    "Purifier ID": "4d98e5d1-dfa6-49ff-8f50-84de121ee1ed",
+    "Install Date": "1982-07-02",
+    "Location": "Alvarezshire"
+  },
+  {
+    "Client Name": "Susan Spencer",
+    "Purifier Name": "Dyer-Daniel",
+    "Purifier ID": "6e3c901d-3e28-466c-bc35-0b6d28a84cd1",
+    "Install Date": "1989-05-30",
+    "Location": "South Summershire"
+  },
+  {
+    "Client Name": "Debra Livingston",
+    "Purifier Name": "Jenkins-Miranda",
+    "Purifier ID": "1c1a9587-08ce-4dcf-9202-346cc3c08af5",
+    "Install Date": "2015-09-26",
+    "Location": "Port Kevin"
+  },
+  {
+    "Client Name": "Amanda Cardenas",
+    "Purifier Name": "Chandler Inc",
+    "Purifier ID": "8e4a1946-59af-4141-9ab8-abdb6d503ac8",
+    "Install Date": "1981-03-21",
+    "Location": "Perrybury"
+  },
+  {
+    "Client Name": "Kathryn Wise",
+    "Purifier Name": "Morales-Morgan",
+    "Purifier ID": "5df45a1a-0ddb-4e9b-ad79-dba371e2bba7",
+    "Install Date": "1994-12-12",
+    "Location": "Lauraborough"
+  },
+  {
+    "Client Name": "Elizabeth Jones",
+    "Purifier Name": "Ward, Roberts and Fowler",
+    "Purifier ID": "968d9a01-b31e-4f45-86d4-06eb0e9bc5dd",
+    "Install Date": "1976-06-01",
+    "Location": "North Shannontown"
+  },
+  {
+    "Client Name": "Joann Myers",
+    "Purifier Name": "Mason, Boyer and Gutierrez",
+    "Purifier ID": "1730f402-aa99-4538-a149-77570ca21f72",
+    "Install Date": "2023-04-20",
+    "Location": "Amberfort"
+  },
+  {
+    "Client Name": "Dr. Amber Gutierrez",
+    "Purifier Name": "Massey Group",
+    "Purifier ID": "cb93c976-aebd-463b-8a5b-a0c348562741",
+    "Install Date": "2005-12-08",
+    "Location": "New Stephen"
+  },
+  {
+    "Client Name": "Angela Herrera",
+    "Purifier Name": "Dixon, Levy and Benson",
+    "Purifier ID": "1ad7a0ec-7a45-409f-be4d-e70c90f603bb",
+    "Install Date": "2013-01-19",
+    "Location": "New Jeffhaven"
+  },
+  {
+    "Client Name": "Linda Williams",
+    "Purifier Name": "Murphy Ltd",
+    "Purifier ID": "ef18bf60-47b6-4390-99b4-c7ba597ef05d",
+    "Install Date": "1987-02-07",
+    "Location": "East Lindaborough"
+  },
+  {
+    "Client Name": "Melissa Evans",
+    "Purifier Name": "Thomas, Webster and Jimenez",
+    "Purifier ID": "2bbbec4c-043d-4328-be7a-7a045bf562bf",
+    "Install Date": "2016-02-20",
+    "Location": "South Michelefort"
+  },
+  {
+    "Client Name": "Kaylee Conway",
+    "Purifier Name": "Torres-Munoz",
+    "Purifier ID": "3a87d74a-c90c-4ebd-83ee-75d2510630f9",
+    "Install Date": "2014-03-28",
+    "Location": "South Debra"
+  },
+  {
+    "Client Name": "Cassandra Murphy",
+    "Purifier Name": "Rhodes-Jones",
+    "Purifier ID": "372426e3-880b-4968-b75c-cf411eb7b829",
+    "Install Date": "2024-06-25",
+    "Location": "Lake Richardport"
+  },
+  {
+    "Client Name": "Jennifer Villanueva",
+    "Purifier Name": "Bond and Sons",
+    "Purifier ID": "56ae0f40-a26a-4dc3-a515-07affade7345",
+    "Install Date": "1997-12-17",
+    "Location": "Sanchezbury"
+  },
+  {
+    "Client Name": "Sara Garrett",
+    "Purifier Name": "Smith-Evans",
+    "Purifier ID": "fb29340e-b98a-4735-93f9-36e2958e098f",
+    "Install Date": "1998-10-26",
+    "Location": "North Johnhaven"
+  },
+  {
+    "Client Name": "Taylor Hopkins",
+    "Purifier Name": "Patterson-Bernard",
+    "Purifier ID": "7451bf99-dfcd-4be9-9576-a632fd36e495",
+    "Install Date": "2009-04-20",
+    "Location": "Andrewsville"
+  },
+  {
+    "Client Name": "Caitlin Gonzalez",
+    "Purifier Name": "Jones PLC",
+    "Purifier ID": "e761b8f3-9926-408f-91c7-15dbf3134bd4",
+    "Install Date": "2003-12-08",
+    "Location": "Victoriatown"
+  },
+  {
+    "Client Name": "Susan Larson",
+    "Purifier Name": "Jackson-Montoya",
+    "Purifier ID": "add41d9c-51d5-4229-89a3-0539d73fd48a",
+    "Install Date": "1995-06-03",
+    "Location": "Lake Scottchester"
+  },
+  {
+    "Client Name": "Jennifer Dixon",
+    "Purifier Name": "Whitehead, Wright and Jones",
+    "Purifier ID": "c83e79e8-4f99-47d2-ad76-bd118df2b9c1",
+    "Install Date": "2005-01-22",
+    "Location": "East Joe"
+  },
+  {
+    "Client Name": "Alexandria Clark",
+    "Purifier Name": "Barnes, Wood and Holland",
+    "Purifier ID": "320161a2-5319-40b9-814b-30a90ab1c93e",
+    "Install Date": "1999-12-07",
+    "Location": "New Antonioborough"
+  },
+  {
+    "Client Name": "Lauren Davis",
+    "Purifier Name": "Taylor, Macias and Ramos",
+    "Purifier ID": "29730342-d505-4b75-8a36-5d5d11730818",
+    "Install Date": "2000-02-23",
+    "Location": "West Rachel"
+  },
+  {
+    "Client Name": "Tracy Bradford",
+    "Purifier Name": "Hamilton, Silva and Montoya",
+    "Purifier ID": "b02ae054-4bae-4a48-a2d3-a19c53439a4e",
+    "Install Date": "2012-10-15",
+    "Location": "Mckeeville"
+  },
+  {
+    "Client Name": "Kristen Sandoval",
+    "Purifier Name": "Ayers Inc",
+    "Purifier ID": "71fb9c2a-ef2b-490e-8727-89942350ceb6",
+    "Install Date": "2009-04-30",
+    "Location": "Evanfurt"
+  },
+  {
+    "Client Name": "Mrs. Karen Nielsen",
+    "Purifier Name": "Casey PLC",
+    "Purifier ID": "00c9a451-88f4-4cdf-bba0-dda90f8f4105",
+    "Install Date": "2018-06-18",
+    "Location": "Madisonville"
+  },
+  {
+    "Client Name": "Rebecca Watson",
+    "Purifier Name": "Melendez PLC",
+    "Purifier ID": "85420425-fea3-43bc-bf2f-11f54db276b8",
+    "Install Date": "1977-04-12",
+    "Location": "Lake Brittany"
+  },
+  {
+    "Client Name": "Terry Cox",
+    "Purifier Name": "Sanders Inc",
+    "Purifier ID": "c900a657-1a99-4752-8182-854a10d81338",
+    "Install Date": "1989-09-25",
+    "Location": "Derekview"
+  },
+  {
+    "Client Name": "Kayla Fisher",
+    "Purifier Name": "Knox, Short and Reed",
+    "Purifier ID": "e6dbdd1e-0f9a-4532-8347-7005b50b8a6c",
+    "Install Date": "2019-09-03",
+    "Location": "Port Drewfort"
+  },
+  {
+    "Client Name": "Linda Gray",
+    "Purifier Name": "Lewis-Pugh",
+    "Purifier ID": "e8df2395-0309-4561-9980-492814cbfe5f",
+    "Install Date": "1975-12-31",
+    "Location": "Morrisside"
+  },
+  {
+    "Client Name": "Kristen West",
+    "Purifier Name": "Ingram-Bartlett",
+    "Purifier ID": "81abba20-6060-408f-bb7b-016dd96c2a51",
+    "Install Date": "1994-07-28",
+    "Location": "Cervantesmouth"
+  },
+  {
+    "Client Name": "Bianca Watts",
+    "Purifier Name": "Henderson Inc",
+    "Purifier ID": "3c40522d-5fe0-4295-9777-dc76d8bb055b",
+    "Install Date": "2004-09-08",
+    "Location": "Joseview"
+  },
+  {
+    "Client Name": "Amanda Knight",
+    "Purifier Name": "Cervantes, Torres and Marsh",
+    "Purifier ID": "9c1b539e-9f36-450b-a4b9-f5ab7f307785",
+    "Install Date": "2007-07-16",
+    "Location": "West Lawrence"
+  },
+  {
+    "Client Name": "Lisa Schmidt",
+    "Purifier Name": "Williams, Vance and Rodriguez",
+    "Purifier ID": "09db0ce8-4a4b-43e5-b710-96081ae12948",
+    "Install Date": "2004-05-15",
+    "Location": "Emilybury"
+  },
+  {
+    "Client Name": "Amber Lewis",
+    "Purifier Name": "Jefferson LLC",
+    "Purifier ID": "4cf74d43-7b5f-4b79-afda-47975cab5000",
+    "Install Date": "1995-12-16",
+    "Location": "Trevinostad"
+  },
+  {
+    "Client Name": "Brittany Davis",
+    "Purifier Name": "Reyes, Jones and Tanner",
+    "Purifier ID": "d2084707-1ab9-422c-a268-c819041ea2fa",
+    "Install Date": "1992-11-30",
+    "Location": "West Brittanyshire"
+  },
+  {
+    "Client Name": "Julie Liu",
+    "Purifier Name": "Kaufman, Rivera and Phillips",
+    "Purifier ID": "7575e08e-538e-4496-b34f-0f9480a75e8e",
+    "Install Date": "1975-06-04",
+    "Location": "Jacksonstad"
+  },
+  {
+    "Client Name": "Gail Cross",
+    "Purifier Name": "Turner and Sons",
+    "Purifier ID": "45fb44e5-9df6-4cfd-8e82-b13455070883",
+    "Install Date": "1970-06-12",
+    "Location": "Wallerside"
+  },
+  {
+    "Client Name": "Shelley Davis",
+    "Purifier Name": "Mills-Bailey",
+    "Purifier ID": "ed483837-3055-41e7-a7c7-df55bf304cc7",
+    "Install Date": "1982-06-20",
+    "Location": "North Paulaberg"
+  },
+  {
+    "Client Name": "Tina Anderson",
+    "Purifier Name": "Curtis, Mclean and Baker",
+    "Purifier ID": "c4672e07-328c-4fd9-918e-4782986384da",
+    "Install Date": "1990-10-09",
+    "Location": "Harrisland"
+  },
+  {
+    "Client Name": "Andrea Thompson",
+    "Purifier Name": "Mcneil-Matthews",
+    "Purifier ID": "cb68cf14-effa-402c-aba4-871d620b9975",
+    "Install Date": "2024-08-12",
+    "Location": "Lake Joshua"
+  }
+]
+  
+  $('#clientsTable').DataTable({
+      data: data,
+      columns: [
+          { data: 'Client Name' },
+          { data: 'Purifier Name' },
+          { data: 'Purifier ID' },
+          { data: 'Install Date' },
+          { data: 'Location' }
+      ]
+  });
+  
+  function toggleSubmenu(event, menuId) {
+      event.preventDefault();
+      
+      const submenu = document.getElementById(menuId);
+      const parentItem = submenu.parentElement;
+      const isOpen = submenu.style.display === 'block';
+      const allMenus = document.querySelectorAll('.nav-treeview');
+  
+      // Close all other menus before toggling the current one
+      allMenus.forEach(menu => {
+          if (menu.id !== menuId) {
+              menu.style.display = 'none';
+              menu.parentElement.classList.remove('active');
+              const arrow = menu.parentElement.querySelector('.fa-angle-down, .fa-angle-right');
+              if (arrow) {
+                  arrow.classList.remove('fa-angle-down');
+                  arrow.classList.add('fa-angle-right');
+              }
+              localStorage.setItem(`${menu.id}Open`, 'false');
+          }
+      });
+  
+      // Toggle the clicked menu
+      if (!isOpen) {
+          submenu.style.display = 'block';
+          parentItem.classList.add('active');
+          const arrow = parentItem.querySelector('.fa-angle-right');
+          if (arrow) {
+              arrow.classList.remove('fa-angle-right');
+              arrow.classList.add('fa-angle-down');
+          }
+          localStorage.setItem(`${menuId}Open`, 'true');
+      } else {
+          submenu.style.display = 'none';
+          parentItem.classList.remove('active');
+          const arrow = parentItem.querySelector('.fa-angle-down');
+          if (arrow) {
+              arrow.classList.remove('fa-angle-down');
+              arrow.classList.add('fa-angle-right');
+          }
+          localStorage.setItem(`${menuId}Open`, 'false');
+      }
+  }
+  
+  // Initialize sidebar state on page load
+  document.addEventListener('DOMContentLoaded', function() {
+      const menus = ['employeeMenu', 'clientMenu', 'setupMenu'];
+      const currentPage = window.location.pathname.split('/').pop();
+  
+      menus.forEach(menuId => {
+          const submenu = document.getElementById(menuId);
+          const parentItem = submenu.parentElement;
+          let isOpen = localStorage.getItem(`${menuId}Open`) === 'true';
+  
+          // Check if current page is in this submenu, and keep it open
+          submenu.querySelectorAll('.nav-link').forEach(link => {
+              if (link.getAttribute('href') === `./${currentPage}`) {
+                  link.classList.add('active');
+                  isOpen = true; // Keep the parent menu open if this is the active page
+              }
+          });
+  
+          if (isOpen) {
+              submenu.style.display = 'block';
+              parentItem.classList.add('active');
+              const arrow = parentItem.querySelector('.fa-angle-right');
+              if (arrow) {
+                  arrow.classList.remove('fa-angle-right');
+                  arrow.classList.add('fa-angle-down');
+              }
+          } else {
+              submenu.style.display = 'none';
+              parentItem.classList.remove('active');
+          }
+      });
+  });
+  
+  // Prevent dropdown from closing when clicking sub-items
+  document.querySelectorAll('.nav-treeview .nav-link').forEach(link => {
+      link.addEventListener('click', function(event) {
+          event.stopPropagation(); // Prevent click from bubbling up and toggling the parent
+          const parentMenu = this.closest('.nav-treeview');
+          if (parentMenu) {
+              localStorage.setItem(`${parentMenu.id}Open`, 'true'); // Ensure the menu stays open
+          }
+      });
+  });
+  
+  // Form Submission Handler (unchanged)
+  document.getElementById('clientsForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const clientName = this.clientName.value;
+      const purifierName = this.purifierName.value;
+      const purifierId = this.purifierId.value;
+      const installDate = this.installDate.value;
+      const location = this.location.value;
+  
+      const table = document.querySelector('#clientsTable tbody');
+      const newRow = `
+          <tr>
+              <td>${clientName}</td>
+              <td>${purifierName}</td>
+              <td>${purifierId}</td>
+              <td>${installDate}</td>
+              <td>${location}</td>
+          </tr>
+      `;
+      table.innerHTML += newRow;
+  
+      showAlert();
+      this.reset();
+  });
+  
+  function showAlert() {
+      const alertBox = document.getElementById('alertMessage');
+      alertBox.style.display = 'block';
+      alertBox.classList.add('show');
+      setTimeout(() => {
+          hideAlert();
+      }, 3000);
+  }
+  
+  function hideAlert() {
+      const alertBox = document.getElementById('alertMessage');
+      alertBox.classList.remove('show');
+      setTimeout(() => {
+          alertBox.style.display = 'none';
+      }, 150);
+  }
+  
+  // DataTable dynamic column functions (unchanged)
+  let dataTable;
+  let dynamicColumnCount = 0;
+  
+  $(document).ready(function() {
+      dataTable = $('#clientsTable').DataTable();
+      const clients = JSON.parse(localStorage.getItem('clients')) || [];
+      clients.forEach(client => {
+          dataTable.row.add([
+              client.clientName,
+              client.purifierName,
+              client.purifierId,
+              client.installDate,
+              client.location
+          ]).draw();
+      });
+  });
+  
+  function addColumn() {
+      const headerRow = document.getElementById('tableHeaderRow');
+      const newHeader = document.createElement('th');
+      const columnName = `Extra ${++dynamicColumnCount}`;
+      newHeader.textContent = columnName;
+      headerRow.appendChild(newHeader);
+  
+      $('#clientsTable tbody tr').each(function() {
+          $(this).append(`<td>Data ${dynamicColumnCount}</td>`);
+      });
+  
+      dataTable.destroy();
+      dataTable = $('#clientsTable').DataTable();
+  }
+  
+  function removeLastColumn() {
+      const headerRow = document.getElementById('tableHeaderRow');
+      if (headerRow.cells.length <= 1) return;
+  
+      headerRow.deleteCell(-1);
+      $('#clientsTable tbody tr').each(function() {
+          this.deleteCell(-1);
+      });
+  
+      if (dynamicColumnCount > 0) dynamicColumnCount--;
+  
+      dataTable.destroy();
+      dataTable = $('#clientsTable').DataTable();
+  }
+  </script>
+      
+
+
+ 
+    
+ <!-- JavaScript files -->
+<script src="assets/js/core/jquery.3.2.1.min.js"></script>
+<script src="assets/js/core/popper.min.js"></script>
+<script src="assets/js/core/bootstrap.min.js"></script>
+<script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+<script src="assets/js/ready.min.js"></script>
+    
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
+
+</body>
+
+</html>

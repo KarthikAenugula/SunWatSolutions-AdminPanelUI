@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location Picker</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        #mapModal, #viewMapModal {
+            display: none; position: fixed; top: 10%; left: 10%; width: 80%; height: 70%;
+            background: white; border: 1px solid black; padding: 10px; z-index: 1000;
+        }
+        #map, #viewMap { width: 100%; height: 80%; }
+        .modal-buttons { margin-top: 10px; }
+        table { width: 80%; margin: 20px auto; border-collapse: collapse; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        button { cursor: pointer; padding: 8px 12px; margin: 5px; }
+    </style>
+</head>
+<body>
+    <h2>Location Picker</h2>
+    <input type="text" id="locationInput" placeholder="Click to select location" onclick="openMapModal()" readonly>
+    <button onclick="openMapModal()">Pick Location</button>
+    
+    <h3>Saved Locations</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Address</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="locationsTable"></tbody>
+    </table>
+    
+    <div id="mapModal">
+        <h3>Select Location</h3>
+        <div id="map"></div>
+        <div class="modal-buttons">
+            <button onclick="saveLocation()">Save Location</button>
+            <button onclick="closeMapModal()">Close</button>
+        </div>
+    </div>
+    
+    <div id="viewMapModal">
+        <h3>View Location</h3>
+        <div id="viewMap"></div>
+        <div class="modal-buttons">
+            <button onclick="closeViewMapModal()">Close</button>
+        </div>
+    </div>
+    
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        let map, marker, currentLatLng, locations = [];
+        let viewMap;
+
+        function openMapModal() {
+            document.getElementById("mapModal").style.display = "block";
+            map = L.map('map').setView([17.385044, 78.486671], 13);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OpenStreetMap contributors' }).addTo(map);
+            
+            marker = L.marker([17.385044, 78.486671], { draggable: true }).addTo(map);
+            marker.on('dragend', function(event) {
+                currentLatLng = event.target.getLatLng();
+                updateAddress(currentLatLng);
+            });
+            
+            map.on('click', function(e) {
+                marker.setLatLng(e.latlng);
+                currentLatLng = e.latlng;
+                updateAddress(currentLatLng);
+            });
+        }
+
+        function updateAddress(latlng) {
+            fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latlng.lat}&lon=${latlng.lng}`)
+                .then(response => response.json())
+                .then(data => {
+                    let address = data.display_name || 'Unknown Location';
+                    document.getElementById('locationInput').value = address;
+                });
+        }
+
+        function saveLocation() {
+            if (currentLatLng) {
+                let address = document.getElementById('locationInput').value;
+                locations.push({ address, lat: currentLatLng.lat, lng: currentLatLng.lng });
+                updateTable();
+                closeMapModal();
+            } else {
+                alert("Please select a location.");
+            }
+        }
+
+        function updateTable() {
+            let tableBody = document.getElementById('locationsTable');
+            tableBody.innerHTML = '';
+            locations.forEach((loc, index) => {
+                let row = tableBody.insertRow();
+                row.insertCell(0).textContent = loc.address;
+                row.insertCell(1).textContent = loc.lat.toFixed(6);
+                row.insertCell(2).textContent = loc.lng.toFixed(6);
+                let btn = document.createElement('button');
+                btn.textContent = "View";
+                btn.onclick = () => openViewMap(loc.lat, loc.lng);
+                row.insertCell(3).appendChild(btn);
+            });
+        }
+
+        function openViewMap(lat, lng) {
+            document.getElementById("viewMapModal").style.display = "block";
+            viewMap = L.map('viewMap').setView([lat, lng], 13);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OpenStreetMap contributors' }).addTo(viewMap);
+            L.marker([lat, lng]).addTo(viewMap);
+        }
+
+        function closeMapModal() {
+            document.getElementById("mapModal").style.display = "none";
+            if (map) { map.remove(); }
+        }
+
+        function closeViewMapModal() {
+            document.getElementById("viewMapModal").style.display = "none";
+            if (viewMap) { viewMap.remove(); }
+        }
+    </script>
+</body>
+</html>
